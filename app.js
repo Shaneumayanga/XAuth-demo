@@ -9,11 +9,11 @@ const CLIENT_SECRET = "nCN8jOqZ0S6E3tkehv5g"
 app.use(express.static(__dirname+"/public"))
 
 
-app.get("/login",async (req,res)=>{
+app.get("/login", (req,res)=>{
     res.redirect(`https://xauth.shaneumayanga.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_url=http://localhost:8080/callback&response_type=code`)
 });
 
-app.get("/callback", async (req, res) => {
+app.get("/callback",  (req, res) => {
     const code = req.query.code;
     axios({
         method:'post',
