@@ -6,11 +6,10 @@ const PORT = 8080;
 const CLIENT_ID = "8b7367b2-8295-40f7-af2a-606ddddabcca"
 const CLIENT_SECRET = "nCN8jOqZ0S6E3tkehv5g"
 
-
 app.use(express.static(__dirname+"/public"))
 
+
 app.get("/login",async (req,res)=>{
-    console.log(`https://xauth.shaneumayanga.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_url=http://localhost:8080/callback&response_type=code`)
     res.redirect(`https://xauth.shaneumayanga.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_url=http://localhost:8080/callback&response_type=code`)
 });
 

@@ -18,7 +18,6 @@
 				Authorization: 'Bearer ' + token
 			}
 		})
-		// Parse the response as JSON
 		.then(res => res.json())
 		.then(res => {
             document.write(JSON.stringify(res));
