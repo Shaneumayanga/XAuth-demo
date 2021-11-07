@@ -15,7 +15,6 @@ app.get("/login",async (req,res)=>{
 
 app.get("/callback", async (req, res) => {
     const code = req.query.code;
-    console.log("code"+code);
     axios({
         method:'post',
         url:`https://xauth.shaneumayanga.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}`,
