@@ -2,26 +2,27 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Hello</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hello</title>
 </head>
+
 <body>
 </body>
 <script>
-	const query = window.location.search.substring(1)
-	const token = query.split('access_token=')[1]
-	fetch('https://xauth.shaneumayanga.com/login/oauth/user', {
-			headers: {
-				Accept: "application/json",
-				Authorization: 'Bearer ' + token
-			}
-		})
-		.then(res => res.json())
-		.then(res => {
+    const query = window.location.search.substring(1)
+    const token = query.split('access_token=')[1]
+    fetch('https://xauth.shaneumayanga.com/login/oauth/user', {
+        method: "post",
+        headers: {
+            Accept: "application/json",
+            Authorization: 'Bearer ' + token
+        }
+    }).then(res => res.json())
+        .then(res => {
             document.write(JSON.stringify(res));
-		})
+        })
 </script>
 
 </html>
