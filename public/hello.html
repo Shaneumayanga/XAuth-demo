@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Hello</title>
+</head>
+<body>
+</body>
+<script>
+	const query = window.location.search.substring(1)
+	const token = query.split('access_token=')[1]
+	fetch('https://xauth.shaneumayanga.com/login/oauth/user', {
+			headers: {
+				Accept: "application/json",
+				Authorization: 'Bearer ' + token
+			}
+		})
+		// Parse the response as JSON
+		.then(res => res.json())
+		.then(res => {
+            document.write(JSON.stringify(res));
+		})
+</script>
+
+</html>
