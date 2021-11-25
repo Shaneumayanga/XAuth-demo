@@ -23,7 +23,6 @@ app.get("/callback", async (req, res) => {
         }
     });
     const access_token = tokenres.data.accessToken;
-
     const result = await axios({
         method: 'post',
         url: `https://xauth.shaneumayanga.com/login/oauth/user`,
@@ -34,8 +33,6 @@ app.get("/callback", async (req, res) => {
     });
     console.log(result.data)
     res.redirect(`/hello.html?name=${result.data.name}`)
-
-
 });
 
 
