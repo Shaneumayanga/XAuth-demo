@@ -12,17 +12,9 @@
 </body>
 <script>
     const query = window.location.search.substring(1)
-    const token = query.split('access_token=')[1]
-    fetch('https://xauth.shaneumayanga.com/login/oauth/user', {
-        method: "post",
-        headers: {
-            Accept: "application/json",
-            Authorization: 'Bearer ' + token
-        }
-    }).then(res => res.json())
-        .then(res => {
-            document.write(JSON.stringify(res));
-        })
+    const name = query.split('name=')[1]
+    document.write(`<h1>Hello ${name}!</h1>`)
+ 
 </script>
 
 </html>
