@@ -3,8 +3,11 @@ const axios = require('axios');
 const app = express();
 const PORT = 8080;
 
-const CLIENT_ID = "710e010d-4f51-4896-a8b6-5edfbb038dd1"
-const CLIENT_SECRET = "tvx5qjILw4WQ23zB8MAU"
+
+
+//register your app :~ xauth.shaneumayanga.com
+const CLIENT_ID = "<your-client-id>"
+const CLIENT_SECRET = "<your-client-secret"
 
 app.use(express.static(__dirname + "/public"))
 
@@ -15,6 +18,7 @@ app.get("/login", (req, res) => {
 
 app.get("/callback", async (req, res) => {
     const code = req.query.code;
+    console.log(code);
     const tokenres = await axios({
         method: 'post',
         url: `https://xauth.shaneumayanga.com/login/oauth/access_token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&code=${code}`,
@@ -22,7 +26,9 @@ app.get("/callback", async (req, res) => {
             accept: 'application/json'
         }
     });
+    console.log(tokenres);
     const access_token = tokenres.data.accessToken;
+    console.log(access_token);
     const result = await axios({
         method: 'post',
         url: `https://xauth.shaneumayanga.com/login/oauth/user`,
@@ -32,7 +38,7 @@ app.get("/callback", async (req, res) => {
         }
     });
     console.log(result.data)
-    res.redirect(`/hello.html?name=${result.data.name}`)
+    res.redirect(`/hello.html?name=${result.data.Name}`)
 });
 
 
