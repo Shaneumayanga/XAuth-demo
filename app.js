@@ -45,5 +45,5 @@ app.get("/callback", async (req, res) => {
 app.listen(8080, () => console.log(`App running on PORT : ${PORT}`))
 
 // XAuth :~ xauth.shaneumayanga.com
-// Email :~ shaneumayanga445@gmail.com
+// Email :~ me@shaneumayanga.com
 // website :~ shaneumayanga.com
