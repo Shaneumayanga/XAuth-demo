@@ -6,8 +6,8 @@ const PORT = 8080;
 
 
 //register your app :~ xauth.shaneumayanga.com
-const CLIENT_ID = "e3b6eaee-8cd8-466c-b673-719154140016"
-const CLIENT_SECRET = "cJsH67ExpYuG10iCV4lq"
+const CLIENT_ID = "d7c8925a-5763-4420-a780-67b8b8b1fd58"
+const CLIENT_SECRET = "0YwL9jcUy3sg6kEdb1NA"
 
 app.use(express.static(__dirname + "/public"))
 
@@ -42,7 +42,7 @@ app.get("/callback", async (req, res) => {
 });
 
 
-app.listen(8080, () => console.log(`App running on PORT : ${PORT}`))
+app.listen(PORT, () => console.log(`App running on PORT : ${PORT}`))
 
 // XAuth :~ xauth.shaneumayanga.com
 // Email :~ me@shaneumayanga.com
