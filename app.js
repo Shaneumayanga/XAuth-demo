@@ -12,6 +12,10 @@ const CLIENT_SECRET = "KOD6kHY3h0vjNqdXy82l"
 app.use(express.static(__dirname + "/public"))
 
 
+app.get("/",(req,res)=>{
+    res.send("<a href='/login'> Login with XAuth </a>")
+})
+
 app.get("/login", (req, res) => {
     res.redirect(`https://xauth.shaneumayanga.com/login/oauth/authorize?client_id=${CLIENT_ID}&redirect_url=http://localhost:8080/callback&response_type=code`)
 });
