@@ -6,8 +6,8 @@ const PORT = 8080;
 
 
 //register your app :~ xauth.shaneumayanga.com
-const CLIENT_ID = "d7c8925a-5763-4420-a780-67b8b8b1fd58"
-const CLIENT_SECRET = "0YwL9jcUy3sg6kEdb1NA"
+const CLIENT_ID = "6604444f-25b6-4030-b9cb-b0730e3c0036"
+const CLIENT_SECRET = "KOD6kHY3h0vjNqdXy82l"
 
 app.use(express.static(__dirname + "/public"))
 
